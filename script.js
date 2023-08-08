@@ -100,7 +100,7 @@ function checkGuess () {
       let letterPosition = rightGuess.indexOf(currentGuess[i])
       // is letter in the correct guess
       if (letterPosition === -1) {
-          letterColor = '#D6D2C4'
+          letterColor = '#D6D2C4' //grey
       } else {
           // now, letter is definitely in word
           // if letter index and right guess index are the same
@@ -110,7 +110,7 @@ function checkGuess () {
               letterColor = '#6ECB63'
           } else {
               // shade box yellow
-              letterColor = '#FB743E'
+              letterColor = '#F7D060'
           }
 
           rightGuess[letterPosition] = "#"
@@ -195,10 +195,12 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
     node.addEventListener('animationend', handleAnimationEnd, {once: true});
 });
 
-const refresh = document.getElementById('reset')
 
+// Refresh page button
+const refresh = document.getElementById('reset')
 function handleClick() {
   window.location.reload();
 }
-
 refresh.addEventListener("click", handleClick);
+
+document.getElementById("game-board").style.fontFamily = "Open Sans, sans-serif";

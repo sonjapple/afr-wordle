@@ -87,7 +87,7 @@ function checkGuess () {
   }
 
   if (!WOORDE.includes(guessString)) {
-      toastr.error("Word not in list!")
+      document.querySelector('h2').innerText = "Die woord is nie op die lys nie!"
       return
   }
 
@@ -100,17 +100,17 @@ function checkGuess () {
       let letterPosition = rightGuess.indexOf(currentGuess[i])
       // is letter in the correct guess
       if (letterPosition === -1) {
-          letterColor = 'grey'
+          letterColor = '#D6D2C4'
       } else {
           // now, letter is definitely in word
           // if letter index and right guess index are the same
           // letter is in the right position 
           if (currentGuess[i] === rightGuess[i]) {
               // shade green 
-              letterColor = 'green'
+              letterColor = '#6ECB63'
           } else {
               // shade box yellow
-              letterColor = 'yellow'
+              letterColor = '#FB743E'
           }
 
           rightGuess[letterPosition] = "#"
@@ -127,7 +127,7 @@ function checkGuess () {
   }
 
   if (guessString === rightGuessString) {
-      toastr.success("You guessed right! Game over!")
+    document.querySelector('h2').innerText = "Jy is reg! Mooi gedaan!"
       guessesRemaining = 0
       return
   } else {
@@ -136,8 +136,8 @@ function checkGuess () {
       nextLetter = 0;
 
       if (guessesRemaining === 0) {
-          toastr.error("You've run out of guesses! Game over!")
-          toastr.info(`The right word was: "${rightGuessString}"`)
+        document.querySelector('h2').innerText = "Jou opsies is verstreke. Jy verloor"
+        document.querySelector('h2').innerText = `Die regte woord was: "${rightGuessString}"`
       }
   }
 }
@@ -194,3 +194,11 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
 
     node.addEventListener('animationend', handleAnimationEnd, {once: true});
 });
+
+const refresh = document.getElementById('reset')
+
+function handleClick() {
+  window.location.reload();
+}
+
+refresh.addEventListener("click", handleClick);

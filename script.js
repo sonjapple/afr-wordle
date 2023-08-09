@@ -48,7 +48,10 @@ document.addEventListener('keyup', (e) => {
   }
 })
 
+let infoText = document.querySelector('h3')
+
 function insertLetter (pressedKey) {
+  infoText.innerText = ''
   if (nextLetter === 5) {
       return
   }
@@ -82,14 +85,14 @@ function checkGuess () {
   }
 
   if (guessString.length != 5) {
-    document.querySelector('h3').innerText = "Nie genoeg letters nie!"
-    document.querySelector('h3').style.color = '#FD8D14'
+    infoText.innerText = "Nie genoeg letters nie!"
+    infoText.style.color = '#FD8D14'
       return
   }
 
   if (!WOORDE.includes(guessString)) {
-      document.querySelector('h3').innerText = "Die woord is nie op die lys nie!"
-      document.querySelector('h3').style.color = '#FD8D14'
+    infoText.innerText = "Die woord is nie op die lys nie!"
+    infoText.style.color = '#FD8D14'
       return
   }
 
@@ -129,8 +132,8 @@ function checkGuess () {
   }
 
   if (guessString === rightGuessString) {
-    document.querySelector('h3').innerText = "Jy is reg! Mooi gedaan!"
-    document.querySelector('h3').style.color = '#6ECB63'
+    infoText.innerText = "Jy is reg! Mooi gedaan!"
+    infoText.style.color = '#6ECB63'
     guessesRemaining = 0
     return
   } else {
@@ -139,10 +142,10 @@ function checkGuess () {
       nextLetter = 0;
 
       if (guessesRemaining === 0) {
-        document.querySelector('h3').innerText = "Jou opsies is verstreke. Jy verloor"
-        document.querySelector('h3').style.color = '#C70039'
-        document.querySelector('h3').innerText = `Die regte woord was: "${rightGuessString}"`
-        document.querySelector('h3').style.color = '#FC70039'
+        infoText.innerText = "Jou opsies is verstreke. Jy verloor"
+        infoText.style.color = '#C70039'
+        infoText.innerText = `Die regte woord was: "${rightGuessString}"`
+        infoText.style.color = '#FC70039'
       }
   }
 }
@@ -208,4 +211,5 @@ function handleClick() {
 }
 refresh.addEventListener("click", handleClick);
 
+// Change game-board font family
 document.getElementById("game-board").style.fontFamily = "Open Sans, sans-serif";

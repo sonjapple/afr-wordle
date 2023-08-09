@@ -1,14 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 
 h1, h3, .bottom, button {
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
  }
 
  h1 {
   font-size: 2.5rem;
+ }
+
+ a {
+  text-decoration: none;
+  color: #D43076;
+  font-weight: 700;
+ }
+
+ a:hover {
+  text-decoration: underline;
  }
 
 #reset {
@@ -17,7 +29,7 @@ h1, h3, .bottom, button {
   background-color: #D8D9DA;
   border-radius: 8px;
   border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-shadow: #A8A196 0 4px 9px;
   box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
@@ -40,20 +52,21 @@ h1, h3, .bottom, button {
   white-space: nowrap;
 }
 
-.button-68:hover {
-  background-color: #A8A196;
+#reset:hover {
+  background-color: #7F8487;
   opacity: 1;
+  color: white;
   transform: translateY(0);
   transition-duration: .35s;
 }
 
-.button-68:active {
+#reset:active {
   transform: translateY(2px);
   transition-duration: .35s;
 }
 
-.button-68:hover {
-  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+#reset:hover {
+  box-shadow: #D8D9DA 0 6px 12px;
 }
 
 
@@ -108,4 +121,11 @@ h1, h3, .bottom, button {
   margin: 0 2px;
   cursor: pointer;
   text-transform: uppercase;
+}
+
+footer {
+  margin-top: 7%;
+  padding: 1px;
+  text-align: center;
+  background-color: #D8D9DA;
 }

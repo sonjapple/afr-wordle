@@ -82,12 +82,14 @@ function checkGuess () {
   }
 
   if (guessString.length != 5) {
-      toastr.error("Not enough letters!")
+    document.querySelector('h3').innerText = "Nie genoeg letters nie!"
+    document.querySelector('h3').style.color = '#FD8D14'
       return
   }
 
   if (!WOORDE.includes(guessString)) {
-      document.querySelector('h2').innerText = "Die woord is nie op die lys nie!"
+      document.querySelector('h3').innerText = "Die woord is nie op die lys nie!"
+      document.querySelector('h3').style.color = '#FD8D14'
       return
   }
 
@@ -100,7 +102,7 @@ function checkGuess () {
       let letterPosition = rightGuess.indexOf(currentGuess[i])
       // is letter in the correct guess
       if (letterPosition === -1) {
-          letterColor = '#D6D2C4' //grey
+          letterColor = '#D8D9DA' //grey
       } else {
           // now, letter is definitely in word
           // if letter index and right guess index are the same
@@ -127,17 +129,20 @@ function checkGuess () {
   }
 
   if (guessString === rightGuessString) {
-    document.querySelector('h2').innerText = "Jy is reg! Mooi gedaan!"
-      guessesRemaining = 0
-      return
+    document.querySelector('h3').innerText = "Jy is reg! Mooi gedaan!"
+    document.querySelector('h3').style.color = '#6ECB63'
+    guessesRemaining = 0
+    return
   } else {
       guessesRemaining -= 1;
       currentGuess = [];
       nextLetter = 0;
 
       if (guessesRemaining === 0) {
-        document.querySelector('h2').innerText = "Jou opsies is verstreke. Jy verloor"
-        document.querySelector('h2').innerText = `Die regte woord was: "${rightGuessString}"`
+        document.querySelector('h3').innerText = "Jou opsies is verstreke. Jy verloor"
+        document.querySelector('h3').style.color = '#C70039'
+        document.querySelector('h3').innerText = `Die regte woord was: "${rightGuessString}"`
+        document.querySelector('h3').style.color = '#FC70039'
       }
   }
 }

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
 
 
-h1, .bottom, button {
+h1, h3, .bottom, button {
   text-align: center;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
@@ -10,7 +10,7 @@ h1, .bottom, button {
 #reset {
   appearance: none;
   backface-visibility: hidden;
-  background-color: #D6D2C4;
+  background-color: #D8D9DA;
   border-radius: 8px;
   border-style: none;
   box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
@@ -37,7 +37,7 @@ h1, .bottom, button {
 }
 
 .button-68:hover {
-  background-color: #1e8449;
+  background-color: #A8A196;
   opacity: 1;
   transform: translateY(0);
   transition-duration: .35s;
